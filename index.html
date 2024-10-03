@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager - Login & Sign Up</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <div class="heading-container">
+      <h1>Task Management System</h1>
+    </div>
+    <div class="login-container">
+      <h2>Sign In / Sign Up</h2>
+      <input
+        type="text"
+        id="username"
+        class="form-control"
+        placeholder="Username"
+        required
+      />
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        placeholder="Password"
+        required
+      />
+      <button id="login-btn" class="btn btn-primary btn-block">Login</button>
+      <button id="signup-btn" class="btn btn-success btn-block">Sign Up</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script>
+      document
+        .getElementById("login-btn")
+        .addEventListener("click", function () {
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          const storedPassword = localStorage.getItem(username);
+          if (storedPassword === password) {
+            Swal.fire({
+              title: "Login Successful",
+              text: "Welcome to your task manager!",
+              icon: "success",
+              confirmButtonText: "Proceed",
+            }).then(() => {
+              window.location.href = `home.html?username=${encodeURIComponent(
+                username
+              )}`;
+            });
+          } else {
+            Swal.fire({
+              title: "Login Failed",
+              text: "Invalid username or password!",
+              icon: "error",
+              confirmButtonText: "Try Again",
+            });
+          }
+        });
+
+      document
+        .getElementById("signup-btn")
+        .addEventListener("click", function () {
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+          if (localStorage.getItem(username)) {
+            Swal.fire({
+              title: "Sign Up Failed",
+              text: "Username already taken! Please choose a different username.",
+              icon: "error",
+              confirmButtonText: "Try Again",
+            });
+          } else {
+            localStorage.setItem(username, password);
+            Swal.fire({
+              title: "Sign Up Successful",
+              text: "Your account has been created! You can now log in.",
+              icon: "success",
+              confirmButtonText: "Login",
+            });
+          }
+        });
+    </script>
+  </body>
+</html>

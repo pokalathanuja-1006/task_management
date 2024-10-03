@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+  background-image: url("lbg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding-left: 150px;
+}
+
+.login-container {
+  max-width: 400px;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading-container {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #343a40;
+}
+
+.heading-container h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-container .form-control {
+  margin-bottom: 15px;
+}

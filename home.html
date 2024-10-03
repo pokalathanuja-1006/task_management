@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="light-mode">
+    <div class="heading-container">
+      <h1 class="heading">Task Management System</h1>
+    </div>
+    <div class="container mt-5">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 id="greeting"></h1>
+        <button id="toggle-theme" class="btn btn-warning">
+          Dark/Light Mode
+        </button>
+      </div>
+      <hr />
+      <form id="name-form" class="d-flex align-items-center">
+        <input
+          type="text"
+          id="user-name"
+          class="form-control mr-2"
+          placeholder="Change Your Name"
+          required
+        />
+        <button type="submit" class="btn btn-primary">Update Name</button>
+      </form>
+      <form id="task-form" class="d-flex align-items-center mt-4">
+        <input
+          type="text"
+          id="task-name"
+          class="form-control mr-2"
+          placeholder="Task Name"
+          required
+        />
+        <button type="submit" class="btn btn-success">Add Task</button>
+      </form>
+      <div class="progress mt-4">
+        <div
+          id="progress-bar"
+          class="progress-bar"
+          role="progressbar"
+          style="width: 0%"
+        ></div>
+      </div>
+      <div class="mt-4">
+        <button id="view-pending" class="btn btn-info">
+          View Pending Tasks
+        </button>
+        <button id="view-completed" class="btn btn-secondary">
+          View Completed Tasks
+        </button>
+      </div>
+      <table id="task-table" class="table mt-4">
+        <thead>
+          <tr>
+            <th>Task Name</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
